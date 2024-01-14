@@ -11,6 +11,7 @@
 		1AAC3A052B51F968009B1C5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC3A042B51F968009B1C5C /* ContentView.swift */; };
 		1AAC3A072B51F969009B1C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAC3A062B51F969009B1C5C /* Assets.xcassets */; };
 		1AAC3A0B2B51F969009B1C5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAC3A0A2B51F969009B1C5C /* Preview Assets.xcassets */; };
+		1AAC3A142B51F9C4009B1C5C /* CoverFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC3A132B51F9C4009B1C5C /* CoverFlowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		1AAC3A062B51F969009B1C5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AAC3A082B51F969009B1C5C /* CoverFlow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoverFlow.entitlements; sourceTree = "<group>"; };
 		1AAC3A0A2B51F969009B1C5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1AAC3A132B51F9C4009B1C5C /* CoverFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverFlowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		1AAC3A012B51F968009B1C5C /* CoverFlow */ = {
 			isa = PBXGroup;
 			children = (
+				1AAC3A122B51F98C009B1C5C /* Helpers */,
 				1AAC3A022B51F968009B1C5C /* CoverFlowApp.swift */,
 				1AAC3A042B51F968009B1C5C /* ContentView.swift */,
 				1AAC3A062B51F969009B1C5C /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				1AAC3A0A2B51F969009B1C5C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1AAC3A122B51F98C009B1C5C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC3A132B51F9C4009B1C5C /* CoverFlowView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 			files = (
 				1AAC3A052B51F968009B1C5C /* ContentView.swift in Sources */,
 				1AAC3A032B51F968009B1C5C /* CoverFlowApp.swift in Sources */,
+				1AAC3A142B51F9C4009B1C5C /* CoverFlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
