@@ -12,13 +12,20 @@ struct CoverFlowView<Content: View, Item: RandomAccessCollection>: View where It
   var items: Item
   var content: (Item.Element) -> Content
   var body: some View {
-    ScrollView(.horizontal) {
-      LazyHStack(spacing: 0) {
-        ForEach(items) { item in
-          content(item)
-            .frame(width: itemWidth)
+    GeometryReader {
+      let size = $0.size
+      
+      ScrollView(.horizontal) {
+        LazyHStack(spacing: 0) {
+          ForEach(items) { item in
+            content(item)
+              .frame(width: itemWidth)
+          }
         }
+        .padding(.horizontal, (size.width - itemWidth) / 2)
+        .scrollTargetLayout()
       }
+      .scrollTargetBehavior(.viewAligned)
     }
   }
 }

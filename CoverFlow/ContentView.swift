@@ -15,7 +15,7 @@ struct ContentView: View {
     NavigationStack {
       VStack {
         CoverFlowView(itemWidth: 280, items: items)  { item in
-            RoundedRectangle(cornerRadius: 20)
+          RoundedRectangle(cornerRadius: 20)
             .fill(item.color.gradient)
         }
         .frame(height: 180)
