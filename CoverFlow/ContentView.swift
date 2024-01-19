@@ -14,14 +14,14 @@ struct ContentView: View {
   
   @State private var spacing: CGFloat = 0
   @State private var rotation: CGFloat = .zero
-  @State private var enabledReflection: Bool = false
+  @State private var enableReflection: Bool = false
   
   var body: some View {
     NavigationStack {
       VStack {
         Spacer(minLength: 0)
         
-        CoverFlowView(itemWidth: 280, spacing: 0, rotation: 0, items: items)  { item in
+        CoverFlowView(itemWidth: 280, enableReflection: enableReflection,spacing: 0, rotation: 0, items: items)  { item in
           RoundedRectangle(cornerRadius: 20)
             .fill(item.color.gradient)
         }
@@ -30,7 +30,7 @@ struct ContentView: View {
         Spacer(minLength: 0)
         
         VStack(alignment: .leading, spacing: 10, content: {
-          Toggle("Toggle Reflection", isOn: $enabledReflection)
+          Toggle("Toggle Reflection", isOn: $enableReflection)
           
           Text("Card Spacing")
             .font(.caption2)
@@ -44,6 +44,9 @@ struct ContentView: View {
           
           Slider(value: $spacing, in: 0...90)
         })
+        .padding(15)
+        .background(.ultraThinMaterial, in: .rect(cornerRadius: 10))
+        .padding(15)
       }
       .navigationTitle("CoverFlow")
     }
