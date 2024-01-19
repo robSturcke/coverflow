@@ -11,14 +11,39 @@ struct ContentView: View {
   @State private var items: [CoverFlowItem] = [.red, .blue, .green, .yellow, .primary].compactMap{
     return .init(color: $0)
   }
+  
+  @State private var spacing: CGFloat = 0
+  @State private var rotation: CGFloat = .zero
+  @State private var enabledReflection: Bool = false
+  
   var body: some View {
     NavigationStack {
       VStack {
-        CoverFlowView(itemWidth: 280, items: items)  { item in
+        Spacer(minLength: 0)
+        
+        CoverFlowView(itemWidth: 280, spacing: 0, rotation: 0, items: items)  { item in
           RoundedRectangle(cornerRadius: 20)
             .fill(item.color.gradient)
         }
         .frame(height: 180)
+        
+        Spacer(minLength: 0)
+        
+        VStack(alignment: .leading, spacing: 10, content: {
+          Toggle("Toggle Reflection", isOn: $enabledReflection)
+          
+          Text("Card Spacing")
+            .font(.caption2)
+            .foregroundStyle(.gray)
+          
+          Slider(value: $spacing, in: -90...20)
+          
+          Text("Card Rotation")
+            .font(.caption2)
+            .foregroundStyle(.gray)
+          
+          Slider(value: $spacing, in: 0...90)
+        })
       }
       .navigationTitle("CoverFlow")
     }
