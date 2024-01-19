@@ -21,7 +21,13 @@ struct ContentView: View {
       VStack {
         Spacer(minLength: 0)
         
-        CoverFlowView(itemWidth: 280, enableReflection: enableReflection,spacing: 0, rotation: 0, items: items)  { item in
+        CoverFlowView(
+          itemWidth: 280,
+          enableReflection: enableReflection,
+          spacing: spacing,
+          rotation: rotation,
+          items: items
+        )  { item in
           RoundedRectangle(cornerRadius: 20)
             .fill(item.color.gradient)
         }
@@ -36,13 +42,13 @@ struct ContentView: View {
             .font(.caption2)
             .foregroundStyle(.gray)
           
-          Slider(value: $spacing, in: -90...20)
+          Slider(value: $spacing, in: -120...20)
           
           Text("Card Rotation")
             .font(.caption2)
             .foregroundStyle(.gray)
           
-          Slider(value: $spacing, in: 0...90)
+          Slider(value: $rotation, in: 0...180)
         })
         .padding(15)
         .background(.ultraThinMaterial, in: .rect(cornerRadius: 10))
